@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "moment": "^2.29.1",
+    "mongodb": "^4.2.0",
+    "percentile": "^1.6.0"
+  }
+}
