@@ -21,13 +21,13 @@ In this toolkit, you can test the approximate latency of Lucene index update.
 
 - Provision an M30 Atlas Cluster in the region closest to the location where the script is going to be executed.
 - [Load Sample Data](https://docs.atlas.mongodb.com/sample-data/) into the cluster. 
-- Create a [dynamic index](https://docs.atlas.mongodb.com/reference/atlas-search/tutorial/create-index-ui/) on the collection `movies` in the `sample_mflix` database.
+- Create a [dynamic index](https://docs.atlas.mongodb.com/reference/atlas-search/tutorial/create-index-ui/) on the collection `movies` in the `sample_mflix` database. Result should be similar to below.
 
-
+![001](pics/002.png)
 
 ## Modifying Connection String
 
-- Change the url paramater in the `latency_test.js`  accordingly.
+- Change the `connectionString` variable in the `latency_test.js`  accordingly.
 
 
 
@@ -52,3 +52,7 @@ In this toolkit, you can test the approximate latency of Lucene index update.
 - Change the index name and field to be updated properly. 
 - You can update multiple fields rather than one field as in this script and re-evaluate the latency values
 - This is only one single thread therefore you can run multiple node process concurrently and re-evaluate the latency values
+- If you increase number of updates per iteration, you may see higher latencies.
+  - e.g. `var numberOfUpdatesPerIteration=1000`
+
+- 
