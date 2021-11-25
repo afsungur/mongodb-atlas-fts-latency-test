@@ -31,6 +31,14 @@ In this toolkit, you can test the approximate latency of Lucene index update.
 
 
 
+## How the Test Works
+
+- In every step script generates a random string and updates a field in the collection and that field is also in the search index. 
+  - Depends on the variable `numberOfUpdatesPerIteration` , 1 or more documents can be updated.
+  - `_id` fields of the updated documents were stored temporarily. 
+- After `updateMany` successfully executed, `$search` query executed with the `phrase` search to match generated random string. 
+  - `$search` query is executed until it returns all the updated documents in the `updateMany` stage. 
+
 ## Running the Test
 
 - Locate the folder where the script in place
@@ -46,7 +54,7 @@ In this toolkit, you can test the approximate latency of Lucene index update.
 
 
 
-#### How to customize this script
+#### How to Customize This Script
 
 - Change the db/collection name accordingly in the config part of the script
 - Change the index name and field to be updated properly. 
@@ -55,4 +63,3 @@ In this toolkit, you can test the approximate latency of Lucene index update.
 - If you increase number of updates per iteration, you may see higher latencies.
   - e.g. `var numberOfUpdatesPerIteration=1000`
 
-- 
