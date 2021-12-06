@@ -2,9 +2,11 @@
 
 In this toolkit, you can test the approximate latency of Lucene index update. 
 
+In contrast to [regular indexes](https://docs.mongodb.com/manual/indexes/) ([Wired Tiger](https://docs.mongodb.com/manual/core/wiredtiger/) Indexes) in MongoDB, Lucene search indexes are asynchronously updated. Therefore, you might see stale data, if you immediately query just after you've written. 
 
 
-## Where was it tested
+
+## Where It was Tested
 
 - It's been tested succesfully on Amazon Linux 2, with the node version `v17.1.0`  and npm version `8.1.2`. 
 
