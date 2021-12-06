@@ -123,7 +123,7 @@ MongoClient.connect(connectionString, async function(err, dbconn) {
     }
     console.log("Stats:")
     console.log(`Max execution time: ${Math.max(...durations)} ms`)
-    console.log(`Max execution time: ${Math.min(...durations)} ms`)
+    console.log(`Min execution time: ${Math.min(...durations)} ms`)
     
     const percentileResult = percentile(
         [50, 95, 99], // calculates 50p, 95p and 99p in one pass
